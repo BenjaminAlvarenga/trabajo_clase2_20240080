@@ -1,4 +1,4 @@
-
+import globalStyles from "./src/styles/globalStyles.js"
 import { StatusBar } from 'expo-status-bar';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 
@@ -7,8 +7,8 @@ import WorkersScreen from './src/screens/WorkersScreen';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Mi aplicación consumiendo datos desde una API</Text>
+    <View style={globalStyles.containerMain}>
+      <Text style={globalStyles.title}>Mi aplicación consumiendo datos desde una API</Text>
       <WorkersScreen />
     </View> 
   );
