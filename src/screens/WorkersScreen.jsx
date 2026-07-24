@@ -4,20 +4,23 @@ import { View, FlatList, StyleSheet, Text } from "react-native";
 import CustomCard from "../components/CustomCard";
 //importamos el hook useCustomData que se encargará de obtener la información de los empleados desde la API
 import useCustomData from "../hooks/useCustomData";
+import Style from "../styles/globalStyles.js"
+import CustomInput from "../components/customInput.jsx";
 
 const WorkersScreen = () => {
   //utilizamos el hook useCustomData para obtener la información de los empleados y el estado de loading
   const { workerData, loading } = useCustomData();
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Lista de empleados</Text>
+    <View style={Style.containerWScreen}>
+      <Text style={Style.title}>Lista de empleados</Text>
 
-      <Text style={styles.description}>
+      <Text style={Style.description}>
         En esta pantalla estamos mostrando la lista de empleados utilizando el
         componente FlatList de React Native. Cada empleado se representa
         mediante un CustomCard que muestra su nombre, trabajo y fecha de inicio.
       </Text>
+      <CustomInput />
       <FlatList
         data={workerData}
         renderItem={({ item }) => <CustomCard worker={item} />}
@@ -28,23 +31,3 @@ const WorkersScreen = () => {
 };
 
 export default WorkersScreen;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#791010",
-    padding: 20,
-  },
-  title: {
-    color: "#fff",
-    fontSize: 24,
-    fontWeight: "bold",
-    marginBottom: 20,
-  },
-  description: {
-    color: "#fff",
-    fontSize: 16,
-    marginBottom: 20,
-    fontWeight: "semibold",
-  },
-});

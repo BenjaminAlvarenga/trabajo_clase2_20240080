@@ -1,3 +1,6 @@
+import { StyleSheet, Platform } from "react-native";
+import { StatusBar } from 'expo-status-bar';
+
 const styles = StyleSheet.create({
     containerMain: {
       flex: 1,
@@ -71,3 +74,5 @@ const styles = StyleSheet.create({
         textAlign: "center",
       },
   });
+
+  export default styles

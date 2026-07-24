@@ -2,6 +2,7 @@
 
 //los imports que traen los componentes nativos de react native
 import { StyleSheet, Text, View } from "react-native";
+import Style from "../styles/globalStyles.js"
 
 /**https://retoolapi.dev/GH2Ivb/dataMovil
  * 
@@ -16,43 +17,12 @@ import { StyleSheet, Text, View } from "react-native";
 
 const CustomCard = ({ worker }) => {
   return (
-    <View style={styles.card}>
-      <Text style={styles.name}>{worker.name}</Text>
-      <Text style={styles.work}>{worker.work}</Text>
-      <Text style={styles.work_since}>{worker.work_since}</Text>
+    <View style={Style.card}>
+      <Text style={Style.nameCard}>{worker.name}</Text>
+      <Text style={Style.work}>{worker.work}</Text>
+      <Text style={Style.work_since}>{worker.work_since}</Text>
     </View>
   );
 };
 
 export default CustomCard;
-
-const styles = StyleSheet.create({
-  card: {
-    backgroundColor: "#fff",
-    borderRadius: 10,
-    padding: 20,
-    marginBottom: 20,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-  },
-  name: {
-    fontSize: 18,
-    fontWeight: "bold",
-    marginBottom: 10,
-  },
-  work: {
-    fontSize: 16,
-
-    marginBottom: 5,
-  },
-  work_since: {
-    fontSize: 14,
-    color: "#666",
-  },
-});
